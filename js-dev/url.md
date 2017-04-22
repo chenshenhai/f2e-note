@@ -56,6 +56,9 @@ getURLParam('key')
 
 #### 高阶方法
 
+只兼容新版浏览器
+![js-urlsearchparam-caniuse.png](./../assets/js-urlsearchparam-caniuse.png)
+
 ```js
 let params = new URLSearchParams(location.search);
 
