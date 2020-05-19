@@ -8,7 +8,7 @@ function throttle(fn, timeout = 100) {
     isFinish = false;
     setTimeout(() => {
       if (typeof fn === 'function') {
-        fn();
+        fn.apply(this, arguments);
       }
       isFinish = true;
     }, timeout);
