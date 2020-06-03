@@ -1,5 +1,5 @@
 function myFetch(url, timeout) {
-  return Promise.all([
+  return Promise.race([
     fetch(url),
     new Promise((resolve, reject) => {
       setTimeout(() => {
