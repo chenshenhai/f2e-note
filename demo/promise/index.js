@@ -76,7 +76,7 @@ class MiniPromise {
     return new MiniPromise((resolve) => resolve(val));
   }
 
-  reject(reject) {
+  reject(val) {
     return new MiniPromise((resolve, reject) => reject(val))
   }
 }
