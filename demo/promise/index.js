@@ -67,6 +67,18 @@ class MiniPromise {
       }
     });
   }
+
+  catch(reject) {
+    this.then(undefined, reject)
+  }
+
+  resolve(val) {
+    return new MiniPromise((resolve) => resolve(val));
+  }
+
+  reject(reject) {
+    return new MiniPromise((resolve, reject) => reject(val))
+  }
 }
 
 
