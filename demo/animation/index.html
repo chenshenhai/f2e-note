@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <style>
+      @keyframes myaction {
+        /* from {
+          left: 0;
+        }
+        to {
+          left: 600px;
+        } */
+        0% {
+          left: 0;
+        }
+        50% {
+          left: 600px;
+        }
+        100% {
+          left: 0;
+        }
+      }
+      .box {
+        position: relative;
+        width: 1200px;
+        height: 200px;
+      }
+      .item {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #000000;
+        background: #cccccc;
+      }
+
+      .item-action {
+        animation-delay: 1s;
+        animation: myaction 4s infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="item item-action">
+        hello world
+      </div>
+    </div>
+  </body>
+</html>
