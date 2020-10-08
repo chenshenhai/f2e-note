@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <style>
+      .text-ellipsis {
+        background: #accef7;
+        width: 200px;
+        height: 20px;
+        line-height: 20px;
+
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .text-ellipsis-2-line {
+        background: #accef7;
+        width: 200px;
+        height: 40px;
+        line-height: 20px;
+
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-all;
+        display: -webkit-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="text-ellipsis">
+      这是一段测试文案，这是一段测试文案，这是一段测试文案
+    </div>
+  
+    <hr/>
+  
+    <div class="text-ellipsis">
+      1234567890abcdefghijklmnopqrstuvwsyz
+    </div>
+  
+    <hr/>
+  
+    <div class="text-ellipsis-2-line">
+      这是一段测试文案，这是一段测试文案，这是一段测试文案，这是一段测试文案，这是一段测试文案，这是一段测试文案，这是一段测试文案，这是一段测试文案，这是一段测试文案
+    </div>
+  
+    <hr/>
+  
+    <div class="text-ellipsis-2-line">
+      1234567890abcdefghijklmnopqrstuvwsyz1234567890abcdefghijklmnopqrstuvwsyz
+    </div>
+  </body>
+</html>
