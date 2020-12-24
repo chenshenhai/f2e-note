@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "http-server ./demo/"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/chenshenhai/f2e-note#readme",
   "devDependencies": {
-    "koa": "^2.12.0",
-    "koa-static": "^5.0.0"
+    "http-server": "^0.12.3"
   }
 }
