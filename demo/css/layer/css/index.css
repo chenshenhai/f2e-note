@@ -1,0 +1,39 @@
+.layer-list {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+}
+.layer-item {
+  position: absolute;
+  left: calc(50% - 90px);
+  top: calc(50% - 260px);
+  width: 180px;
+  height: 320px;
+  opacity: .75;
+  background-color: #0000002a;
+  border: 1px #999999 solid;
+  /* transform: perspective(900px) rotateX(45deg) skew(-15deg); */
+  transform: perspective(900px) translateX(15px) rotateX(45deg) rotate(10deg) skew(-15deg) translateZ(120px);;
+  transition: 1s;
+}
+
+.layer-item:hover {
+  background-color: #f4365791;
+  border: 1px #f4365791 solid;
+}
+
+.layer-1 {
+  margin-top: 0;
+}
+.layer-2 {
+  margin-top: 60px;
+}
+.layer-3 {
+  margin-top: 120px;
+}
+.layer-4 {
+  margin-top: 160px;
+}
