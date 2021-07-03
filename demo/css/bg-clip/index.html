@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <style>
+    .clip-container {
+      position: relative;
+      overflow: hidden;
+      width: 400px;
+      height: 300px;
+      background: #00bcd4;
+      font-size: 32px;
+      color: #ffffff;
+    }
+    .clip-mask {
+      position: absolute;
+      margin-top: 10px;
+      margin-left: 20px;
+      width: 200px;
+      height: 100px;
+      outline: 9999px solid #00000080;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+    </style>
+  </head>
+  <body>
+
+    <div class="clip-container">
+      <span>
+        Hello World! Hello World! Hello World! Hello World! Hello World! Hello World!
+        Hello World! Hello World! Hello World! Hello World! Hello World! Hello World!
+      </span>
+      <div class="clip-mask"></div>
+    </div>
+
+  </body>
+</html>
