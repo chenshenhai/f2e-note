@@ -1,15 +1,18 @@
-import { img2dataURL } from './lib.js';
+import { img2dataURL, img2file, file2dataURL } from './lib.js';
 
 const img = document.querySelector('#img');
 const body = document.querySelector('body');
+function appendImage(src, name = '') {
+  const chidImg = new Image();
+  chidImg.width = 100;
+  chidImg.src = src;
+  chidImg.setAttribute('data-type', name)
+  body.appendChild(chidImg);
+}
 
-const dataURL = img2dataURL(img);
-const img2 = new Image();
-img2.width = 100;
-img2.src = dataURL;
-img2.setAttribute('data-type', 'img2dataURL')
-body.appendChild(img2);
+appendImage(img2dataURL(img), 'img2dataURL');
 
-
-
-
+const file = img2file(img);
+file2dataURL(file).then((str) => {
+  appendImage(str, 'file2dataURL')
+}).catch(console.log); 
