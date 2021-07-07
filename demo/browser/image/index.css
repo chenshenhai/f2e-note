@@ -1,0 +1,21 @@
+.list {
+  user-select: none;
+  display: grid;
+  grid-gap: 10px;
+}
+
+.item {
+  width: 100%;
+  cursor: move;
+  grid-area: span 1/span 2;
+  font-size: 32px;
+  background-color: #999999;
+  color: #ffffff;
+}
+
+
+.item-change {
+  color: #666666;
+  border: 1px dashed #666666;
+  background-color: #fff;
+}
