@@ -1,0 +1,25 @@
+
+
+function parse(str) {
+  const paramList = str.split('&');
+  var result = {};
+  paramList.forEach((paramStr) => {
+    const strList = paramStr.split('=');
+    var name = strList[0] || '';
+    var value = strList[1] || '';
+    if (result.hasOwnProperty(name)) {
+      if (Array.isArray(result[name])) {
+        result[name].push(value);
+      } else {
+        var temp = result[name];
+        result[name] = [temp, value]
+      }
+    } else {
+      result[name] = value
+    }
+  });
+  return result;
+}
+
+var str = 'abc=1&b=2&c=3&d=4&d=5&e=6&f=7&g=&h='
+parse(str);
