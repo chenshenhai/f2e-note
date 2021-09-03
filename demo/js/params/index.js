@@ -23,3 +23,20 @@ function parse(str) {
 
 var str = 'abc=1&b=2&c=3&d=4&d=5&e=6&f=7&g=&h='
 parse(str);
+
+
+// 002
+
+function getUrlParams(url) {
+  const reg = /(?<key>[^\?^\=^\&]+?)=(?<value>[^\=^\&^\#]+?)/g;
+  const params = {};
+  let match = reg.exec(url);
+  while (match !== null) {
+    params[match.groups.key] = match.groups.value
+    match = reg.exec(url);
+  }
+  return params;
+}
+
+var url = "https://www.a.com/index?a=1&b=2&c=3#abc"
+console.log(getUrlParams(url))
