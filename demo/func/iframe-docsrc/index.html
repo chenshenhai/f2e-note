@@ -11,17 +11,48 @@
 
   </head>
   <body>
-     
+    <!-- <iframe src="./child.html"></iframe> -->
   </body>
 
   <script id="doc-script">
+    // function initEvent() {
+    //   const targetNode = document.querySelector('body');
+    //   const config = { attributes: true, childList: true, subtree: true };
+    //   const callback = function(mutationsList, observer) {
+    //     console.log('--------- iframe change ---------')
+    //     window.parent.postMessage({ name: 'iframe-body-change', html: targetNode.innerHTML }, '*')
+    //   };
+    //   const observer = new MutationObserver(callback);
+    //   observer.observe(targetNode, config);
+    //   console.log('init event ok!');
+    // }
+
     function initEvent() {
+      const body = document.querySelector('body');
+      const domList = document.querySelectorAll('[contenteditable]');
+      function listenBlur(e) {
+        window.parent.postMessage({ name: 'iframe-body-blur', html: body.innerHTML }, '*')
+      }
+      function listenInput(e) {
+        window.parent.postMessage({ name: 'iframe-body-input', html: body.innerHTML }, '*')
+      }
+      domList.forEach(() => {
+        domList.forEach((dom) => {
+          dom.addEventListener('blur', listenBlur, false);
+          dom.addEventListener('input', listenInput, false);
+        })
+      });
       console.log('init event ok!');
     }
   </script>
   
   <div id="doc-html" style="display: none;">
-    <h1>Hello World</h2>
+    <div>
+      <h1>Hello World</h1>
+      <div contenteditable="true" style="outline: none; margin: 20px; background: #f0f0f0;">
+        Hello World Hello World
+      </div>
+    </div>
   </div>
 
   <script type="module" src="./index.js"></script>
