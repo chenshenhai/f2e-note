@@ -14,18 +14,19 @@
     </style>
 
     <style>
+    .phone-box {
+      position: relative;
+      width: 1160;
+      height: 720px;
+      /* transform: scale(0.5); */
+    }
     .phone {
       position: absolute;
       left: calc(50% - 8px);
       top: calc(50% - 2px);
       transform: translate(-50%, -50%) rotate(-30deg) skewX(30deg);
     }
-    @media screen and (max-width: 1400px) {
-      .phone {
-        transform: translate(-50%, -50%) rotate(-30deg) skewX(30deg) scale(0.8);
-      }
-    }
-    .phone-back {
+    .phone-entity {
       position: absolute;
       top: -3px;
       transform: translate(-50%, -50%);
@@ -35,7 +36,7 @@
       border-radius: 74px 40px 84px 50px;
       box-shadow: -26px 8px 8px -10px rgba(0,0,0,0.3), -6px 6px 6px 0 rgba(0,0,0,0.6), -30px 14px 10px -10px rgba(0,0,0,0.5), -20px 40px 8px 0 rgba(0,0,0,0.1), -20px 30px 8px 0 rgba(0,0,0,0.1), inset 20px 0 15px -6px rgba(0,0,0,0.6), inset 2px 0 4px -2px rgba(0,0,0,0.6), inset 2px 0 1px -2px rgba(255,255,255,0.1), inset 0 -15px 10px -10px rgba(255,255,255,0.15);
     }
-    .phone-back:before {
+    .phone-entity:before {
       content: "";
       display: block;
       height: 300px;
@@ -49,7 +50,7 @@
       opacity: 0.1;
       transform: rotate(4deg);
     }
-    .phone-back:after {
+    .phone-entity:after {
       content: "";
       display: block;
       height: 300px;
@@ -394,56 +395,58 @@
  
     </style>
    
-    <div class="phone">
-      <div class="phone-back">
-        <div class="phone-left-side">
-          <div class="phone-antena"></div>
-          <div class="phone-button top"></div>
-          <div class="phone-button"></div>
-          <div class="phone-button bottom"></div>
-          <div class="phone-antena bottom"></div>
+    <div class="phone-box">
+      <div class="phone">
+        <div class="phone-entity">
+          <div class="phone-left-side">
+            <div class="phone-antena"></div>
+            <div class="phone-button top"></div>
+            <div class="phone-button"></div>
+            <div class="phone-button bottom"></div>
+            <div class="phone-antena bottom"></div>
+          </div>
+          <div class="phone-bottom">
+            <div class="phone-antena"></div>
+            <div class="bottom-speaker">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="phone-screw">
+              <div></div>
+            </div>
+            <div class="phone-charger">
+            </div>
+            <div class="phone-screw right">
+              <div></div>
+            </div>
+            <div class="bottom-speaker right">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="phone-antena right"></div>
+          </div>
         </div>
-        <div class="phone-bottom">
-          <div class="phone-antena"></div>
-          <div class="bottom-speaker">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div class="phone-screen"></div>
+        <div class="phone-display">
+          <div class="phone-notch">
+            <div class="phone-speaker"></div>
           </div>
-          <div class="phone-screw">
-            <div></div>
+          <div class="display-content">
+            <div class="display-content-view">
+              Hello World
+            </div>
           </div>
-          <div class="phone-charger">
-          </div>
-          <div class="phone-screw right">
-            <div></div>
-          </div>
-          <div class="bottom-speaker right">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-          <div class="phone-antena right"></div>
         </div>
+        
       </div>
-      <div class="phone-screen"></div>
-      <div class="phone-display">
-        <div class="phone-notch">
-          <div class="phone-speaker"></div>
-        </div>
-        <div class="display-content">
-          <div class="display-content-view">
-            Hello World
-          </div>
-        </div>
-      </div>
-      
     </div>
      
    
