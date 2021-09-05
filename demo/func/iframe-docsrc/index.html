@@ -28,13 +28,13 @@
     // }
 
     function initEvent() {
-      const body = document.querySelector('body');
+      const content = document.querySelector('#content');
       const domList = document.querySelectorAll('[contenteditable]');
       function listenBlur(e) {
-        window.parent.postMessage({ name: 'iframe-body-blur', html: body.innerHTML }, '*')
+        window.parent.postMessage({ name: 'iframe-body-blur', html: content.innerHTML }, '*')
       }
       function listenInput(e) {
-        window.parent.postMessage({ name: 'iframe-body-input', html: body.innerHTML }, '*')
+        window.parent.postMessage({ name: 'iframe-body-input', html: content.innerHTML }, '*')
       }
       domList.forEach(() => {
         domList.forEach((dom) => {
@@ -47,11 +47,20 @@
   </script>
   
   <div id="doc-html" style="display: none;">
-    <div>
-      <h1>Hello World</h1>
-      <div contenteditable="true" style="outline: none; margin: 20px; background: #f0f0f0;">
-        Hello World Hello World
-      </div>
+    <style>
+      .text {
+        outline: none;
+        background: #f0f0f0;
+        font-size: 100px;
+        height: 200px;
+        width: 400px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 100px;
+      }
+    </style>
+    <div contenteditable="true" class="text">
+      Hello World
     </div>
   </div>
 
