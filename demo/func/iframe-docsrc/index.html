@@ -15,26 +15,25 @@
   </body>
 
   <script id="doc-script">
-    // function initEvent() {
-    //   const targetNode = document.querySelector('body');
-    //   const config = { attributes: true, childList: true, subtree: true };
-    //   const callback = function(mutationsList, observer) {
-    //     console.log('--------- iframe change ---------')
-    //     window.parent.postMessage({ name: 'iframe-body-change', html: targetNode.innerHTML }, '*')
-    //   };
-    //   const observer = new MutationObserver(callback);
-    //   observer.observe(targetNode, config);
-    //   console.log('init event ok!');
-    // }
 
     function initEvent() {
       const content = document.querySelector('#content');
       const domList = document.querySelectorAll('[contenteditable]');
+      function getContent() {
+        const rect = content.getBoundingClientRect();
+        const html = content.innerHTML;
+        return {
+          width: rect.width,
+          height: rect.height,
+          html,
+        }
+      }
       function listenBlur(e) {
-        window.parent.postMessage({ name: 'iframe-body-blur', html: content.innerHTML }, '*')
+        const rect = content.getBoundingClientRect();
+        window.parent.postMessage({ name: 'iframe-body-blur', ...getContent() }, '*')
       }
       function listenInput(e) {
-        window.parent.postMessage({ name: 'iframe-body-input', html: content.innerHTML }, '*')
+        window.parent.postMessage({ name: 'iframe-body-input', ...getContent() }, '*')
       }
       domList.forEach(() => {
         domList.forEach((dom) => {
@@ -52,7 +51,7 @@
         outline: none;
         background: #f0f0f0;
         font-size: 100px;
-        height: 200px;
+        min-height: 200px;
         width: 400px;
         font-weight: bold;
         text-align: center;

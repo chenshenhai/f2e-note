@@ -33,6 +33,7 @@ const iframeSrcDoc = `
     </div>
   </body>
   <script>
+  var originData = ${JSON.stringify(data, null, 2)}
   ${docScript}
   initEvent();
   </script>
