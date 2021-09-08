@@ -16,8 +16,10 @@ function findMaxDiffStr(str) {
     return true;
   }
 
-  while(start + end <= str.length) {
-    end ++;
+  while(start < str.length - 1 && start < end && end <= str.length) {
+    if (end <= str.length) {
+      end ++;
+    }
     if (check(str.substring(start, end))) {
       if (maxStr.length < (end - start)) {
         maxStr = str.substring(start, end)
@@ -29,6 +31,8 @@ function findMaxDiffStr(str) {
   return maxStr;
 }
 
+console.log(findMaxDiffStr('aaaaaaaaaaaaaaaa12aa'));
+
 console.log(findMaxDiffStr('a'));
 
 console.log(findMaxDiffStr('ab'));
@@ -36,3 +40,5 @@ console.log(findMaxDiffStr('ab'));
 console.log(findMaxDiffStr('aaaaaa'));
 
 console.log(findMaxDiffStr('aaa123456aaadef'));
+
+
