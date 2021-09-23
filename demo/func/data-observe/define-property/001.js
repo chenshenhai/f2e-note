@@ -3,7 +3,7 @@
   const num1 = document.querySelector('#num1');
   const btn1 = document.querySelector('#btn1');
 
-  function reactive(obj, key, val) {
+  function observe(obj, key, val) {
     Object.defineProperty(obj, key, {
       get() {
         return val
@@ -17,12 +17,14 @@
     })
   }
   const data = {}
-  reactive(data, 'num', 0);
+  observe(data, 'num', 0);
 
   btn1.addEventListener('click', () => {
     data.num = data.num + 1;
   });
 })()
+
+
 
 
 
