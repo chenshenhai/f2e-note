@@ -8,7 +8,6 @@
       });
     }
   }
-
   function observe(obj, key, val) {
     observeObj(val);
     Object.defineProperty(obj, key, {

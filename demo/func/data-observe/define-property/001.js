@@ -1,6 +1,5 @@
 // 001
 (() => {
-
   function observe(obj, key, val) {
     Object.defineProperty(obj, key, {
       get() {
@@ -16,8 +15,7 @@
   }
   const data = {}
   observe(data, 'num', 0);
-
- data.num = 123
+  data.num = 123
 })()
 
 
